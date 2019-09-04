@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  roadrunner:
+    build:
+      context: .
+      dockerfile: ./docker/roadrunner/Dockerfile
+    working_dir: /app
+    depends_on:
+      - redis
+    ports:
+      - 8080:8080
+    networks:
+      backend_net:
+  redis:
+    image: redis:alpine
+    volumes:
+      - redis:/data
+    logging:
+      driver: none
+    networks:
+      backend_net:
+
+volumes:
+  redis:
+    driver: local
+networks:
+  backend_net:
