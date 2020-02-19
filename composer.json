@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "facade/ignition": "^1.16",
         "fideloper/proxy": "^4.0",
         "hunternnm/laravel-roadrunner": "^2.0",
         "laravel/framework": "^6.0",
